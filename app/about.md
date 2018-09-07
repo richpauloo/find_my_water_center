@@ -12,7 +12,7 @@ Enter you address in the left sidebar to locate your nearest water systems. Dist
 
 ## Data and Code
 
-This R Shiny web application helps you find your closest water system in California. The full list of ~ 4,000 water systems is publicly available from the [California Environmental Health Tracking Program](http://www.phi.org/focus-areas/?program=california-environmental-health-tracking-network-program), and can be downloaded [here](http://cehtp.org/water/).
+The full list of ~ 4,000 water systems is publicly available from the [California Environmental Health Tracking Program](http://www.phi.org/focus-areas/?program=california-environmental-health-tracking-network-program), and can be downloaded [here](http://cehtp.org/water/).
 
 Code for this project can be found in [this Github repository](https://github.com/richpauloo/find_my_water_center).
 

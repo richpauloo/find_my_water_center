@@ -16,23 +16,25 @@ ui <-
                 placeholder = "Zip Code"),
       actionButton("go","Enter")
       
+      
+      
     ),
     
     # Body
     dashboardBody(
-      tags$head(
-        tags$style(HTML("
-                        blockquote {
-                        padding: 10px 20px;
-                        margin: 0 0 20px;
-                        font-size: 13px;
-                        border-left: 5px solid #eee;
-                        }
-                        "))),
+      # tags$head(
+      #   tags$style(HTML("
+      #                   blockquote {
+      #                   padding: 10px 20px;
+      #                   margin: 0 0 20px;
+      #                   font-size: 13px;
+      #                   border-left: 5px solid #eee;
+      #                   }
+      #                   "))),
       fluidRow(
         tabBox(width = 12, height = NULL,
                tabPanel("Map", 
-                        tags$style(type = "text/css", "#map {height: calc(100vh - 100px) !important;}"),
+                        #tags$style(type = "text/css", "#map {height: calc(100vh - 100px) !important;}"),
                         leafletOutput("map")),
                tabPanel(title = "About", 
                         includeMarkdown("about.md"))

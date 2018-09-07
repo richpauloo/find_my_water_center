@@ -1,0 +1,12 @@
+name: find_water_system
+title: find_water_system
+username:
+account: richpauloo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 429021
+bundleId: 1574958
+url: https://richpauloo.shinyapps.io/find_water_system/
+when: 1536344277.86289
+asMultiple: FALSE
+asStatic: FALSE
