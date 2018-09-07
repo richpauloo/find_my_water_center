@@ -20,10 +20,23 @@ c <- gCentroid(s, byid = TRUE) # centroids of polygons
 cd <- SpatialPointsDataFrame(coords = c@coords, 
                              data = s@data, proj4string = c@proj4string)
 
+# add urls to google maps based on address
+cd@data$gmap_url <- paste0("<a href = 'https://www.google.com/maps/search/",
+                     # cd@coords[, 2], ",+",
+                     # cd@coords[, 1], "'''",
+                     cd$addr_line0, " ",
+                     "CA ",
+                     cd$address_zi,"/'",
+                     ">Google Maps Directions</a>")
+
 # write as a shapefile
 shapefile(cd, filename = paste0(fp, "/data/water_centers/centroids"))
 
 # write as rds
-readr::write_rds(cd, paste0(fp, "/data/water_centers/centroids.rds"))
+readr::write_rds(cd, paste0(fp, "/app/centroids.rds"))
+
+# write polygons as rds
+ss <- rmapshaper::ms_simplify(s, keep_shapes = TRUE)
+readr::write_rds(ss, paste0(fp,"/app/polygons_simp.rds"))
 ```
 

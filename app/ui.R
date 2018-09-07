@@ -1,12 +1,12 @@
 # Define UI for application that draws a histogram
 ui <- 
   dashboardPage(
-    dashboardHeader(title = "Water System Locater",
-                    titleWidth = 300),
+    dashboardHeader(title = "California Water System Locater",
+                    titleWidth = 350),
     dashboardSidebar(
-      width = 300,
+      width = 350,
       textInput("street", 
-                label = h4("Enter Address"), 
+                label = h4("Begin by Entering an Address"), 
                 placeholder = "Street Number"),
       textInput("city", 
                 label = "", 
