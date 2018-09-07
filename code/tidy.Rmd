@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r}
+library(sp)
+library(tidyverse)
+library(raster)
+library(rgeos) # for finding centroids
+```
+
+```{r}
+fp <- "C:/Users/rpauloo/Documents/GitHub/find_my_water_center" # root dir
+s <- shapefile(paste0(fp, "/data/water_centers/service_areas.shp")) # shapefile
+
+c <- gCentroid(s, byid = TRUE) # centroids of polygons
+
+# make into spatial points object
+cd <- SpatialPointsDataFrame(coords = c@coords, 
+                             data = s@data, proj4string = c@proj4string)
+
+# write as a shapefile
+shapefile(cd, filename = paste0(fp, "/data/water_centers/centroids"))
+
+# write as rds
+readr::write_rds(cd, paste0(fp, "/data/water_centers/centroids.rds"))
+```
+
